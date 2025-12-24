@@ -367,8 +367,10 @@ body {
 
   background: linear-gradient(to right, #ffffff, #cbd5e1);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
+
 
 .panel-text p {
   font-size: 1.15rem;
