@@ -1,0 +1,27 @@
+{
+  "name": "2025final-webproject",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/jinxin0211/2025final-webproject#readme",
+  "bugs": {
+    "url": "https://github.com/jinxin0211/2025final-webproject/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jinxin0211/2025final-webproject.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.1",
+    "express": "^5.2.1",
+    "express-fileupload": "^1.5.2",
+    "nedb-promises": "^6.2.3",
+    "vue": "^3.5.26"
+  }
+}

@@ -581,6 +581,263 @@ body {
   background-image: url("../images/9132.png");
 }
 
+/* 滑动到冠军介绍区块时的样式 */
+.champion-pin {
+  min-height: 100vh; /* ⭐ 每一段都有滚动空间 */
+  display: flex;
+  align-items: center;
+}
+
+.champion-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.champion-image img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 24px 0;
+}
+
+.worldchamp-section{
+  position: relative;  /* ✅ 让 absolute 徽章以这里为基准 */
+}
+/* 🏆 World Champion 徽章 */
+.wc-badge{
+  position: absolute;
+  top: 5rem;
+  left: 6vw;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  pointer-events: none;
+}
 
 
-/* 之後 2024、2025 要加直接新增 class 就好 */
+
+/* ===== 🏆 WORLD CHAMPIONS 视觉升级 ===== */
+
+/* 整段冠军区背景更有层次 */
+.worldchamp-section{
+  position: relative;
+  padding: 140px 0 60px;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(59,130,246,0.22), transparent 55%),
+    radial-gradient(circle at 80% 30%, rgba(245,158,11,0.14), transparent 60%),
+    radial-gradient(circle at 50% 120%, rgba(14,165,233,0.10), transparent 60%),
+    linear-gradient(to bottom, #050816, #020617 55%, #000);
+  overflow: hidden;
+}
+
+/* 一点点颗粒感（不需要图片） */
+.worldchamp-section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.06), transparent 40%),
+    radial-gradient(circle at 70% 70%, rgba(255,255,255,0.04), transparent 45%);
+  pointer-events:none;
+  z-index:0;
+}
+
+.worldchamp-section > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* 徽章：更像 LoL 金属质感 */
+.wc-badge{
+  position: absolute;
+  top: 5rem;
+  left: 6vw;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .25rem;
+  pointer-events: none;
+}
+
+/* 复用你现有 fmvp 的字样式也行，但这套更“冠军感” */
+.wc-badge .fmvp-badge-main{
+  border: 1px solid rgba(245,158,11,0.55);
+  background:
+    radial-gradient(circle at top, rgba(15,23,42,0.95), rgba(15,23,42,0.55));
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.55),
+    inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+
+.wc-badge .fmvp-badge-sub{
+  color: rgba(226,232,240,0.72);
+}
+
+/* pin 段落整体居中 + 留空间 */
+.champion-pin{
+  min-height: 100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 40px 0;
+}
+
+/* ===== 🖤 World Champions (Dark Style, match FMVP) ===== */
+
+.worldchamp-section{
+  position: relative;
+  padding: 140px 0 60px;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(59,130,246,0.14), transparent 55%),
+    radial-gradient(circle at 80% 40%, rgba(14,165,233,0.10), transparent 55%),
+    linear-gradient(to bottom, #020617, #000000 70%);
+  overflow: hidden;
+}
+
+.worldchamp-section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,0.05), transparent 45%),
+    radial-gradient(circle at 10% 70%, rgba(255,255,255,0.03), transparent 55%);
+  pointer-events:none;
+  z-index:0;
+}
+
+.worldchamp-section > *{ position: relative; z-index: 1; }
+
+/* 徽章：完全跟 FMVP 同一套，只是你给 wc-badge 用同样样式 */
+.fmvp-badge,
+.wc-badge{
+  position: absolute;
+  top: 5rem;
+  left: 6vw;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  pointer-events: none;
+}
+
+/* 让 wc 的主 badge 也走 FMVP 的冷色风格（不偏金） */
+.wc-badge .fmvp-badge-main{
+  border: 1px solid rgba(15, 103, 226, 0.7);
+  background: radial-gradient(circle at top, rgba(15,23,42,0.95), rgba(15,23,42,0.55));
+  box-shadow: 0 14px 40px rgba(0,0,0,0.65), inset 0 0 0 1px rgba(255,255,255,0.05);
+}
+.wc-badge .fmvp-badge-sub{
+  color: #9ca3af;
+}
+
+/* Pin 段 */
+.champion-pin{
+  min-height: 100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 40px 0;
+}
+
+/* 卡片：更暗、更接近你 FMVP 的 panel 质感 */
+.champion-card{
+  width: min(1000px, 92vw);
+  text-align: center;
+  padding: 34px 36px 26px;
+  border-radius: 26px;
+
+  background:
+    radial-gradient(circle at top, rgba(52, 57, 66, 0.75), rgba(2,6,23,0.55));
+  border: 1px solid rgba(148,163,184,0.20);
+
+  box-shadow:
+    0 30px 90px rgba(0,0,0,0.75),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px);
+}
+
+/* 顶部字：更冷、更干净 */
+.champion-year{
+  display:inline-block;
+  font-size: .85rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(148,163,184,0.95);
+}
+
+.champion-team{
+  margin: 8px 0 12px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  font-size: clamp(2rem, 3.8vw, 3.1rem);
+  background: linear-gradient(to right, #ffffff, #cbd5e1);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color: transparent;
+}
+
+/* 冷色分隔线 */
+.champion-line{
+  width: 160px;
+  height: 2px;
+  margin: 0 auto;
+  background: linear-gradient(to right, transparent, rgba(16, 17, 20, 0.85), transparent);
+  opacity: .8;
+}
+
+/* 图片：暗黑海报感（暗角+轻微高光） */
+.champion-image{
+  margin: 22px auto 18px;
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(148,163,184,0.18);
+  box-shadow: 0 28px 70px rgba(0,0,0,0.70);
+}
+
+.champion-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255,255,255,0.08), transparent 45%),
+    linear-gradient(to bottom, rgba(0,0,0,0.08), rgba(0,0,0,0.55));
+  pointer-events:none;
+}
+
+.champion-image img{
+  width: 100%;
+  height: min(420px, 52vh);
+  object-fit: cover;
+  display:block;
+  transform-origin: center;
+  will-change: transform;
+}
+
+/* 描述：更柔和 */
+.champion-desc{
+  margin: 0 auto;
+  max-width: 72ch;
+  color: rgba(203,213,225,0.85);
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+
+
+/* 手机 */
+@media (max-width: 576px){
+  .champion-card{
+    padding: 26px 16px 20px;
+    border-radius: 22px;
+  }
+  .champion-image img{
+    height: 300px;
+  }
+}
+

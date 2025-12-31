@@ -8,7 +8,7 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/css" />
+  <link rel="stylesheet" href="css/css style.css" />
 </head>
 
 <body>
@@ -34,6 +34,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#FMVP">FMVP</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="#WChamp">WChamp</a>
           </li>
         </ul>
       </nav>
@@ -64,27 +67,28 @@
 
 
   <!-- 🔥 Hero：全螢幕 + 滾輪 pin + PNG 展開 -->
-  <section id="hero" class="hero-section player-hero">
-    <div class="container h-100 d-flex flex-column justify-content-center align-items-center text-center">
-      <p class="hero-tag mb-2"> LEAGUE OF LEGENDS</p>
-      <h1 class="hero-title mb-3">
-        When Legends Take the Stage
-      </h1>
+<section id="hero" class="hero-section player-hero">
+  <div
+    id="heroApp"
+    class="container h-100 d-flex flex-column justify-content-center align-items-center text-center"
+  >
+    <p class="hero-tag mb-2">{{ tag }}</p>
 
+    <h1 class="hero-title mb-3">
+      {{ title }}
+    </h1>
 
-      <div class="player-stack">
-        <div class="player-img"><img src="images/uzi png.png" alt="Player 1"></div>
-        <div class="player-img"><img src="images/oner png.png" alt="Player 2"></div>
-        <div class="player-img"><img src="images/chovy png.png" alt="Player 3"></div>
-        <div class="player-img"><img src="images/9132.png" alt="Player 4"></div>
-        <div class="player-img"><img src="images/guma png.png" alt="Player 5"></div>
-        <div class="player-img"><img src="images/BDD png.png" alt="Player 6"></div>
-        <div class="player-img"><img src="images/keria png.png" alt="Player 7"></div>
+    <div class="player-stack">
+      <div
+        class="player-img"
+        v-for="(p, i) in players"
+        :key="p.src"
+      >
+        <img :src="p.src" :alt="p.alt">
       </div>
-
-
     </div>
-  </section>
+  </div>
+</section>
 
   <!--GSAP 橫向滑動區 -->
   <section id="FMVP" class="gsap-gallery">
@@ -258,7 +262,103 @@
     </div>
   </section>
 
-  </section>
+
+  <!-- 🏆 World Champions Badge -->
+<section class="worldchamp-section">
+  <div class="wc-badge">
+    <span class="fmvp-badge-main">WORLD CHAMPIONS</span>
+    <span class="fmvp-badge-sub">2022 – 2025</span>
+  </div>
+
+<!-- 🏆 World Champions Pin Section -->
+
+<section id="WChamp" class="champion-pin">
+  <div class="champion-card">
+    <div class="champion-meta">
+      <span class="champion-year">2025</span>
+      <h2 class="champion-team">T1</h2>
+      <div class="champion-line"></div>
+    </div>
+
+    <div class="champion-image">
+      <img src="images/T12025.jpg" alt="World Champion 2025">
+    </div>
+
+    <p class="champion-desc">
+      他們在總決賽中以 3-2 擊敗同賽區勁敵 KT Rolster，完成隊史首次世界賽三連霸，中路傳奇選手 Faker 拿下個人第六座世界冠軍，擊敗的 KT 隊伍是 LCK 第四種子
+    </p> 
+</section>
+
+<section class="champion-pin">
+  <div class="champion-card">
+    <div class="champion-meta">
+      <span class="champion-year">2025</span>
+      <h2 class="champion-team">T1</h2>
+      <div class="champion-line"></div>
+    </div>
+
+    <div class="champion-image">
+      <img src="images/T12025.jpg" alt="World Champion 2025">
+    </div>
+
+    <p class="champion-desc">
+      他們在總決賽中以 3-2 擊敗同賽區勁敵 KT Rolster，完成隊史首次世界賽三連霸，中路傳奇選手 Faker 拿下個人第六座世界冠軍，擊敗的 KT 隊伍是 LCK 第四種子
+    </p> 
+</section>
+
+<section class="champion-pin">
+  <div class="champion-card">
+    <div class="champion-meta">
+      <span class="champion-year">2025</span>
+      <h2 class="champion-team">T1</h2>
+      <div class="champion-line"></div>
+    </div>
+
+    <div class="champion-image">
+      <img src="images/T12025.jpg" alt="World Champion 2025">
+    </div>
+
+    <p class="champion-desc">
+      他們在總決賽中以 3-2 擊敗同賽區勁敵 KT Rolster，完成隊史首次世界賽三連霸，中路傳奇選手 Faker 拿下個人第六座世界冠軍，擊敗的 KT 隊伍是 LCK 第四種子
+    </p> 
+</section>
+
+<section class="champion-pin">
+  <div class="champion-card">
+    <div class="champion-meta">
+      <span class="champion-year">2025</span>
+      <h2 class="champion-team">T1</h2>
+      <div class="champion-line"></div>
+    </div>
+
+    <div class="champion-image">
+      <img src="images/T12025.jpg" alt="World Champion 2025">
+    </div>
+
+    <p class="champion-desc">
+      他們在總決賽中以 3-2 擊敗同賽區勁敵 KT Rolster，完成隊史首次世界賽三連霸，中路傳奇選手 Faker 拿下個人第六座世界冠軍，擊敗的 KT 隊伍是 LCK 第四種子
+    </p> 
+</section>
+
+<section class="champion-pin">
+  <div class="champion-card">
+    <div class="champion-meta">
+      <span class="champion-year">2025</span>
+      <h2 class="champion-team">T1</h2>
+      <div class="champion-line"></div>
+    </div>
+
+    <div class="champion-image">
+      <img src="images/T12025.jpg" alt="World Champion 2025">
+    </div>
+
+    <p class="champion-desc">
+      他們在總決賽中以 3-2 擊敗同賽區勁敵 KT Rolster，完成隊史首次世界賽三連霸，中路傳奇選手 Faker 拿下個人第六座世界冠軍，擊敗的 KT 隊伍是 LCK 第四種子
+    </p> 
+</section>
+
+
+
 
 
   <!-- 戰隊簡介區-->
@@ -405,6 +505,42 @@
       }
     });
 
+gsap.utils.toArray(".champion-pin").forEach((section) => {
+  const image = section.querySelector(".champion-image img");
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: "top top",
+      end: "+=100%",
+      pin: true,
+      scrub: true
+    }
+  });
+
+  tl.fromTo(
+    image,
+    { scale: 1 },
+    { scale: 1.2, ease: "none" }
+  );
+});
+
+gsap.from(".wc-badge", {
+  x: -80,
+  opacity: 0,
+  duration: 1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".worldchamp-section",
+    start: "top center",
+    toggleActions: "play none none reverse"
+  }
+});
+
+
+
+
+
 
     // ===== 🔊 背景音樂播放清單 =====
     const bgm = document.getElementById('bgm');
@@ -514,6 +650,36 @@
     window.addEventListener('click', autoStart, { once: true });
     window.addEventListener('scroll', autoStart, { once: true });
   </script>
-</body>
+
+  </body>
+ 
+ 
+ 
+ 
+ <!-- vue -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>
+    const { createApp } = Vue;
+
+createApp({
+  data() {
+    return {
+      tag: "LEAGUE OF LEGENDS",
+      title: "When Legends Take the Stage",
+      players: [
+        { src: "images/uzi png.png", alt: "Uzi" },
+        { src: "images/oner png.png", alt: "Oner" },
+        { src: "images/chovy png.png", alt: "Chovy" },
+        { src: "images/9132.png", alt: "Faker" },
+        { src: "images/guma png.png", alt: "Gumayusi" },
+        { src: "images/BDD png.png", alt: "BDD" },
+        { src: "images/keria png.png", alt: "Keria" }
+      ]
+    };
+  }
+}).mount("#heroApp");
+  </script>
+
+
 
 </html>
