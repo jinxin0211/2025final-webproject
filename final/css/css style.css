@@ -841,3 +841,16 @@ body {
   }
 }
 
+/* ✅ FMVP：真正橫向排列的容器是 #fmvpApp（因為 panel 都在它裡面） */
+#FMVP { overflow: hidden; }
+
+#fmvpApp{
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+}
+
+#FMVP .gsap-panel{
+  flex: 0 0 100vw;
+  min-width: 100vw;
+}

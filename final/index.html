@@ -2,684 +2,656 @@
 <html lang="zh-Hant">
 
 <head>
-  <meta charset="UTF-8" />
-  <title>LoL 戰隊網站</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <title>LoL 戰隊網站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/css style.css" />
+    <link rel="stylesheet" href="css/css style.css" />
 </head>
 
 <body>
-  <!-- 導覽列 -->
-  <header class="navbar navbar-expand-lg navbar-dark lol-navbar">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#hero">League of Legends</a>
+    <!-- 導覽列 -->
+    <header class="navbar navbar-expand-lg navbar-dark lol-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#hero">League of Legends</a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-      <nav id="mainNav" class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="#hero">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#team">Team</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#FMVP">FMVP</a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="#WChamp">WChamp</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <audio id="bgm"></audio>
-  <!-- 🔊 BGM 控制面板 -->
-  <div class="music-panel">
-    <button class="music-toggle" id="musicToggle" type="button">
-      🔈 BGM
-    </button>
-
-    <div class="music-info">
-      <div class="music-title" id="musicTitle">選擇曲目</div>
-      <select id="musicSelect" class="music-select">
-        <option value="0">Legends Never Die (ft. Against The Current) </option>
-        <option value="1">K/DA - POP/STARS (ft. Madison Beer, (G)I-DLE, Jaira Burns) </option>
-        <option value="2">RISE</option>
-        <option value="3">ignite (ft. Zedd)</option>
-        <option value="4">Phoenix (ft. Cailin Russo and Chrissy Costanza)</option>
-        <option value="5">Heavy is the Crown</option>
-      </select>
-    </div>
-  </div>
-
-  </section>
-
-
-  <!-- 🔥 Hero：全螢幕 + 滾輪 pin + PNG 展開 -->
-<section id="hero" class="hero-section player-hero">
-  <div
-    id="heroApp"
-    class="container h-100 d-flex flex-column justify-content-center align-items-center text-center"
-  >
-    <p class="hero-tag mb-2">{{ tag }}</p>
-
-    <h1 class="hero-title mb-3">
-      {{ title }}
-    </h1>
-
-    <div class="player-stack">
-      <div
-        class="player-img"
-        v-for="(p, i) in players"
-        :key="p.src"
-      >
-        <img :src="p.src" :alt="p.alt">
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!--GSAP 橫向滑動區 -->
-  <section id="FMVP" class="gsap-gallery">
-    <div class="fmvp-badge">
-      <span class="fmvp-badge-main">FMVP HISTORY</span>
-      <span class="fmvp-badge-sub">2022 – 2025</span>
-    </div>
-    <!-- fmvp从这边开始 -->
-
-    <div class="gsap-track">
-      <!-- 2022 FMVP -->
-      <section class="gsap-panel panel-2022">
-        <div class="panel-content">
-          <div class="panel-media">
-            <div class="fmvp-photo fmvp-2022"></div>
-          </div>
-
-          <div class="panel-text">
-            <div class="fmvp-year-tag">2022 · WORLDS FMVP</div>
-            <h2>Kingen · DRX</h2>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, accusantium aspernatur accusamus
-              voluptate nobis fugiat neque! Sit cupiditate nihil dolorem.
-            </p>
-            <ul class="fmvp-info-list">
-              <li>Lane：Top</li>
-              <li>Key Traits：Teamfight Initiation and Split Pushing</li>
-            </ul>
-
-            <!-- 代表英雄 -->
-            <div class="fmvp-heroes">
-              <span class="fmvp-heroes-label">Main Hero</span>
-              <div class="fmvp-hero-list">
-                <div class="hero-icon">
-                  <img src="images/Aatrox_0.jpg" alt="Aatrox" />
-                  <span>Aatrox</span>
-                </div>
-                <div class="hero-icon">
-                  <img src="images/Camille_0.jpg" alt="Camille" />
-                  <span>Camille</span>
-                </div>
-                <div class="hero-icon">
-                  <img src="images/Sejuani_0.jpg" alt="Sejuani" />
-                  <span>Sejuani</span>
-                </div>
-              </div>
-            </div>
-          </div>
+            <nav id="mainNav" class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#FMVP">FMVP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#WChamp">WChamp</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-      </section>
+    </header>
 
-      <!-- 2023 FMVP -->
-      <section class="gsap-panel panel-2023">
-        <div class="panel-content">
-          <div class="panel-media">
-            <div class="fmvp-photo fmvp-2023"></div>
-          </div>
-          <div class="panel-text">
-            <div class="fmvp-year-tag">2023 · WORLDS FMVP</div>
-            <h2>Zeus · T1(HLE)</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima veritatis fugit numquam harum eius.
-              Dolores expedita earum quaerat natus consequatur.
-            </p>
-            <ul class="fmvp-info-list">
-              <li>Lane：Top</li>
-              <li>Key Traits：Teamfight Initiation and Split Pushing</li>
-            </ul>
+    <audio id="bgm"></audio>
+    <!-- 🔊 BGM 控制面板 -->
+    <div class="music-panel">
+        <button class="music-toggle" id="musicToggle" type="button">
+            🔈 BGM
+        </button>
 
-            <div class="fmvp-heroes">
-              <span class="fmvp-heroes-label">Main Hero</span>
-              <div class="fmvp-hero-list">
-                <div class="hero-icon">
-                  <img src="images/Aatrox_0.jpg" alt="Aatrox" />
-                  <span>Aatrox</span>
-                </div>
-                <div class="hero-icon">
-                  <img src="images/Camille_0.jpg" alt="Camille" />
-                  <span>Camille</span>
-                </div>
-                <div class="hero-icon">
-                  <img src="images/Sejuani_0.jpg" alt="Sejuani" />
-                  <span>Sejuani</span>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="music-info">
+            <div class="music-title" id="musicTitle">選擇曲目</div>
+            <select id="musicSelect" class="music-select">
+                <option value="0">Legends Never Die (ft. Against The Current) </option>
+                <option value="1">K/DA - POP/STARS (ft. Madison Beer, (G)I-DLE, Jaira Burns) </option>
+                <option value="2">RISE</option>
+                <option value="3">ignite (ft. Zedd)</option>
+                <option value="4">Phoenix (ft. Cailin Russo and Chrissy Costanza)</option>
+                <option value="5">Heavy is the Crown</option>
+            </select>
         </div>
-      </section>
+    </div>
 
-      <!-- 2024 FMVP -->
-      <section class="gsap-panel panel-2024">
-        <div class="panel-content">
-          <div class="panel-media">
-            <div class="fmvp-photo fmvp-2024"></div>
-          </div>
 
-          <div class="panel-text">
-            <div class="fmvp-year-tag">2024 · WORLDS FMVP</div>
-            <h2>faker· T1</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque reiciendis tempora harum eveniet quisquam
-              doloribus autem provident ipsum aspernatur hic?
+
+
+    <!-- 🔥 Hero：全螢幕 + 滾輪 pin + PNG 展開 -->
+    <section id="hero" class="hero-section player-hero">
+        <div id="heroApp"
+            class="container h-100 d-flex flex-column justify-content-center align-items-center text-center">
+            <p class="hero-tag mb-2">{{ tag }}</p>
+
+            <h1 class="hero-title mb-3">
+                {{ title }}
+            </h1>
+
+            <p class="hero-subtitle mb-4">
+                {{ subtitle }}
             </p>
-            <ul class="fmvp-info-list">
-              <li>Lane：Mid lane</li>
-              <li>Key Traits：High damage output and playmaking ability</li>
-            </ul>
 
-            <div class="fmvp-heroes">
-              <span class="fmvp-heroes-label">Main Hero</span>
-              <div class="fmvp-hero-list">
-                <div class="hero-icon">
-                  <img src="images/Aatrox_0.jpg" alt="Aatrox" />
-                  <span>Aatrox</span>
+            <div class="player-stack">
+                <div class="player-img" v-for="(p, i) in players" :key="p.src">
+                    <img :src="p.src" :alt="p.alt">
                 </div>
-                <div class="hero-icon">
-                  <img src="images/Camille_0.jpg" alt="Camille" />
-                  <span>Camille</span>
-                </div>
-                <div class="hero-icon">
-                  <img src="images/Sejuani_0.jpg" alt="Sejuani" />
-                  <span>Sejuani</span>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <!-- 2025 FMVP -->
-      <section class="gsap-panel panel-2025">
-        <div class="panel-content">
-          <div class="panel-media">
-            <div class="fmvp-photo fmvp-2025"></div>
-          </div>
+    <!-- GSAP 橫向滑動區 -->
+    <section id="FMVP" class="gsap-gallery">
+        <div class="fmvp-badge">
+            <span class="fmvp-badge-main">FMVP HISTORY</span>
+            <span class="fmvp-badge-sub"></span>
+        </div>
 
-          <div class="panel-text">
-            <div class="fmvp-year-tag">2025 · WORLDS FMVP</div>
-            <h2>Gumayusi · T1(HLE)</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, iure. Est, praesentium.
-              Repudiandae maiores eveniet veniam facere! Aut, maxime consequatur!
-            </p>
-            <ul class="fmvp-info-list">
-              <li>Lane：AD Carry</li>
-              <li>Key Traits：Exceptional positioning and consistent damage output</li>
-            </ul>
+        <div class="gsap-track">
+            <div id="fmvpApp">
+                <section class="gsap-panel" v-for="p in panels" :key="p.year" :class="p.panelClass">
+                    <div class="panel-content">
+                        <div class="panel-media">
+                            <div class="fmvp-photo" :class="p.photoClass"></div>
+                        </div>
 
-            <div class="fmvp-heroes">
-              <span class="fmvp-heroes-label">Main Hero</span>
-              <div class="fmvp-hero-list">
-                <div class="hero-icon">
-                  <img src="images/Aatrox_0.jpg" alt="Aatrox" />
-                  <span>Aatrox</span>
-                </div>
-                <div class="hero-icon">
-                  <img src="images/Camille_0.jpg" alt="Camille" />
-                  <span>Camille</span>
-                </div>
-                <div class="hero-icon">
-                  <img src="images/Sejuani_0.jpg" alt="Sejuani" />
-                  <span>Sejuani</span>
-                </div>
-              </div>
+                        <div class="panel-text">
+                            <div class="fmvp-year-tag">{{ p.year }} · WORLDS FMVP</div>
+                            <h2>{{ p.player }} · {{ p.team }}</h2>
+
+                            <p>{{ p.desc }}</p>
+
+                            <ul class="fmvp-info-list">
+                                <li>Lane：{{ p.lane }}</li>
+                                <li>Key Traits：{{ p.traits }}</li>
+                            </ul>
+
+                            <div class="fmvp-heroes">
+                                <span class="fmvp-heroes-label">Main Hero</span>
+                                <div class="fmvp-hero-list">
+                                    <div class="hero-icon" v-for="h in p.heroes" :key="h.name">
+                                        <img :src="h.img" :alt="h.name" />
+                                        <span>{{ h.name }}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-    </div>
-  </section>
+    <!-- 🏆 World Champions Badge -->
+    <section class="worldchamp-section">
+        <div class="wc-badge">
+            <span class="fmvp-badge-main">WORLD CHAMPIONS</span>
+            <span class="fmvp-badge-sub">2021 – 2025</span>
+        </div>
 
+        <!-- 🏆 World Champions Pin Section -->
 
-  <!-- 🏆 World Champions Badge -->
-<section class="worldchamp-section">
-  <div class="wc-badge">
-    <span class="fmvp-badge-main">WORLD CHAMPIONS</span>
-    <span class="fmvp-badge-sub">2022 – 2025</span>
-  </div>
+        <section id="WChamp" class="champion-pin">
+            <div class="champion-card">
+                <div class="champion-meta">
+                    <span class="champion-year">2025</span>
+                    <h2 class="champion-team">T1</h2>
+                    <div class="champion-line"></div>
+                </div>
 
-<!-- 🏆 World Champions Pin Section -->
+                <div class="champion-image">
+                    <img src="images/T12025.jpg" alt="World Champion 2025">
+                </div>
 
-<section id="WChamp" class="champion-pin">
-  <div class="champion-card">
-    <div class="champion-meta">
-      <span class="champion-year">2025</span>
-      <h2 class="champion-team">T1</h2>
-      <div class="champion-line"></div>
-    </div>
+                <p class="champion-desc">
+                     1 made history by completing an unprecedented three-peat — three consecutive World Championship titles (2023, 2024, 2025).
+In the 2025 grand final, T1 faced KT Rolster in a thrilling best-of-five. After a back-and-forth series, T1 came from behind and edged KT 3–2 in a dramatic finale. The team’s veteran star Faker secured his sixth Worlds championship — the most in League of Legends history — while Gumayusi was named Finals MVP for his standout performance. The victory marked one of the most exciting Worlds finals ever, with late-series momentum swings and high-pressure clutch plays.
+            </div>
+        </section>
 
-    <div class="champion-image">
-      <img src="images/T12025.jpg" alt="World Champion 2025">
-    </div>
+        <section class="champion-pin">
+            <div class="champion-card">
+                <div class="champion-meta">
+                    <span class="champion-year">2024span>
+                    <h2 class="champion-team">T1</h2>
+                    <div class="champion-line"></div>
+                </div>
 
-    <p class="champion-desc">
-      他們在總決賽中以 3-2 擊敗同賽區勁敵 KT Rolster，完成隊史首次世界賽三連霸，中路傳奇選手 Faker 拿下個人第六座世界冠軍，擊敗的 KT 隊伍是 LCK 第四種子
-    </p> 
-</section>
+                <div class="champion-image">
+                    <img src="images/T12024champ.jpg" alt="World Champion 2024">
+                </div>
 
-<section class="champion-pin">
-  <div class="champion-card">
-    <div class="champion-meta">
-      <span class="champion-year">2025</span>
-      <h2 class="champion-team">T1</h2>
-      <div class="champion-line"></div>
-    </div>
+                <p class="champion-desc">
+                    T1 proved their dynasty was real. Facing Bilibili Gaming, T1 battled through a tough final and emerged victorious with a 3–2 win. Their adaptive drafting and clutch team fighting under pressure solidified their status as the top team of the era
+                </p>
+            </div>
+        </section>
 
-    <div class="champion-image">
-      <img src="images/T12025.jpg" alt="World Champion 2025">
-    </div>
+        <section class="champion-pin">
+            <div class="champion-card">
+                <div class="champion-meta">
+                    <span class="champion-year">2023</span>
+                    <h2 class="champion-team">T1</h2>
+                    <div class="champion-line"></div>
+                </div>
 
-    <p class="champion-desc">
-      他們在總決賽中以 3-2 擊敗同賽區勁敵 KT Rolster，完成隊史首次世界賽三連霸，中路傳奇選手 Faker 拿下個人第六座世界冠軍，擊敗的 KT 隊伍是 LCK 第四種子
-    </p> 
-</section>
+                <div class="champion-image">
+                    <img src="images/T12023champ.jpg" alt="World Champion 2023">
+                </div>
 
-<section class="champion-pin">
-  <div class="champion-card">
-    <div class="champion-meta">
-      <span class="champion-year">2025</span>
-      <h2 class="champion-team">T1</h2>
-      <div class="champion-line"></div>
-    </div>
+                <p class="champion-desc">
+                    1 returned to glory with a commanding performance. In the finals, they outclassed Weibo Gaming (formerly LNG Esports) with a clean 3–0 sweep. This victory marked T1’s fourth World Championship, showcasing flawless strategy, clean macro play, and clutch execution on the world’s biggest stage.
+                </p>
+            </div>
+        </section>
 
-    <div class="champion-image">
-      <img src="images/T12025.jpg" alt="World Champion 2025">
-    </div>
+        <section class="champion-pin">
+            <div class="champion-card">
+                <div class="champion-meta">
+                    <span class="champion-year">2022</span>
+                    <h2 class="champion-team">DRX</h2>
+                    <div class="champion-line"></div>
+                </div>
 
-    <p class="champion-desc">
-      他們在總決賽中以 3-2 擊敗同賽區勁敵 KT Rolster，完成隊史首次世界賽三連霸，中路傳奇選手 Faker 拿下個人第六座世界冠軍，擊敗的 KT 隊伍是 LCK 第四種子
-    </p> 
-</section>
+                <div class="champion-image">
+                    <img src="images/DRX2022champ.jpg" alt="World Champion 2022">
+                </div>
 
-<section class="champion-pin">
-  <div class="champion-card">
-    <div class="champion-meta">
-      <span class="champion-year">2025</span>
-      <h2 class="champion-team">T1</h2>
-      <div class="champion-line"></div>
-    </div>
+                <p class="champion-desc">
+                    The ultimate underdog story. DRX started from the Play-In stage and fought all the way through to the grand final, where they faced T1. In a thrilling series, DRX completed an improbable run and defeated T1 3–2, cementing their legacy as one of the greatest Cinderella runs in Worlds history
+            </div>
+        </section>
 
-    <div class="champion-image">
-      <img src="images/T12025.jpg" alt="World Champion 2025">
-    </div>
+        <section class="champion-pin">
+            <div class="champion-card">
+                <div class="champion-meta">
+                    <span class="champion-year">2021</span>
+                    <h2 class="champion-team">EDG</h2>
+                    <div class="champion-line"></div>
+                </div>
 
-    <p class="champion-desc">
-      他們在總決賽中以 3-2 擊敗同賽區勁敵 KT Rolster，完成隊史首次世界賽三連霸，中路傳奇選手 Faker 拿下個人第六座世界冠軍，擊敗的 KT 隊伍是 LCK 第四種子
-    </p> 
-</section>
+                <div class="champion-image">
+                    <img src="images/EDG2021champ.jpg" alt="World Champion 2021">
+                </div>
 
-<section class="champion-pin">
-  <div class="champion-card">
-    <div class="champion-meta">
-      <span class="champion-year">2025</span>
-      <h2 class="champion-team">T1</h2>
-      <div class="champion-line"></div>
-    </div>
-
-    <div class="champion-image">
-      <img src="images/T12025.jpg" alt="World Champion 2025">
-    </div>
-
-    <p class="champion-desc">
-      他們在總決賽中以 3-2 擊敗同賽區勁敵 KT Rolster，完成隊史首次世界賽三連霸，中路傳奇選手 Faker 拿下個人第六座世界冠軍，擊敗的 KT 隊伍是 LCK 第四種子
-    </p> 
-</section>
-
+                <p class="champion-desc">
+                  EDward Gaming pulled off one of the most memorable comebacks in Worlds history. After dropping the first two games in the finals against DWG KIA, EDG mounted a reverse sweep, winning 3–2 and securing their first-ever World Championship title. Their ability to stay composed under pressure and turn the series around became a defining moment of the 2021 Worlds
+            </div>
+        </section>
 
 
 
 
-  <!-- 戰隊簡介區-->
-  <section id="team" class="section-team py-5">
-    <div class="container">
-      <h2 class="h3 fw-bold mb-3">TOP TEAM IN LEAGUE OF LEGENDS</h2>
-      <p class="text-muted mb-2">
-        所屬賽區：LCK（韓國）　|　聯賽：英雄聯盟冠軍聯賽 LCK
-      </p>
-      <p class="text-muted mb-3">
-        成立年份：2013
-      </p>
-      <p class="mb-3">
-        T1 是英雄聯盟歷史上最具代表性的職業戰隊之一，多次奪得世界冠軍與 LCK 連霸，
-        以穩定的團隊配合與卓越的中路核心而聞名。
-      </p>
-      <p class="mb-0">
-        代表成就：多座世界冠軍與 LCK 冠軍（可依實際資料調整）。
-      </p>
-    </div>
-  </section>
+
+        <!-- 戰隊簡介區-->
+        <section id="team" class="section-team py-5">
+            <div class="container">
+                <h2 class="h3 fw-bold mb-3">TOP TEAM IN LEAGUE OF LEGENDS</h2>
+                <p class="text-muted mb-2">
+                    所屬賽區：LCK（韓國）　|　聯賽：英雄聯盟冠軍聯賽 LCK
+                </p>
+                <p class="text-muted mb-3">
+                    成立年份：2013
+                </p>
+                <p class="mb-3">
+                    T1 是英雄聯盟歷史上最具代表性的職業戰隊之一，多次奪得世界冠軍與 LCK 連霸，
+                    以穩定的團隊配合與卓越的中路核心而聞名。
+                </p>
+                <p class="mb-0">
+                    代表成就：多座世界冠軍與 LCK 冠軍（可依實際資料調整）。
+                </p>
+            </div>
+        </section>
 
 
-  <!-- 關於本站 -->
-  <section id="about" class="section-about py-5">
-    <div class="container">
-      <h2 class="h3 fw-bold mb-3">關於本站</h2>
-      <p class="mb-2">
-        本網站以 T1 英雄聯盟戰隊為主題，作為個人練習作品，主要練習 RWD、GSAP 滾動動畫與整體視覺風格呈現。
-      </p>
-      <p class="mb-0">
-        後續可以擴充：加入比賽紀錄、賽程時間表、精華影片區等內容，打造更完整的電競資訊平台。
-      </p>
-    </div>
-  </section>
+        <!-- 關於本站 -->
+        <section id="about" class="section-about py-5">
+            <div class="container">
+                <h2 class="h3 fw-bold mb-3">關於本站</h2>
+                <p class="mb-2">
+                    本網站以 T1 英雄聯盟戰隊為主題，作為個人練習作品，主要練習 RWD、GSAP 滾動動畫與整體視覺風格呈現。
+                </p>
+                <p class="mb-0">
+                    後續可以擴充：加入比賽紀錄、賽程時間表、精華影片區等內容，打造更完整的電競資訊平台。
+                </p>
+            </div>
+        </section>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.from('.hero-tag', { y: -10, opacity: 0, duration: 0.4 });
-    gsap.from('.hero-title', {
-      y: 20,
-      opacity: 0,
-      duration: 0.6,
-      delay: 0.15
-    });
-    gsap.from('.hero-subtitle', {
-      y: 20,
-      opacity: 0,
-      duration: 0.6,
-      delay: 0.3
-    });
+        <script>
+            gsap.registerPlugin(ScrollTrigger);
 
-    const cards = gsap.utils.toArray('.player-img');
-    const total = cards.length;
-    const centerIndex = (total - 1) / 2;
+            const { createApp } = Vue;
 
-    gsap.set(cards, (i, card) => {
-      const dist = Math.abs(i - centerIndex);
-      gsap.set(card, { zIndex: total - dist });
-    });
+  //           function initFmvpHorizontal() {
+  //   const outer = document.querySelector("#FMVP");
+  //   const inner = document.querySelector("#fmvpApp");
+  //   if (!outer || !inner || !window.ScrollTrigger) return;
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.player-hero',
-        start: 'top top',
-        end: '+=900',
-        scrub: true,
-        pin: true
-      }
-    });
+  //   const panels = inner.querySelectorAll(".gsap-panel");
+  //   if (!panels.length) return;
 
-    cards.forEach((card, i) => {
-      const dist = Math.abs(i - centerIndex);
-      const isCenter = i === Math.round(centerIndex);
-      const baseGap = 85;
-      const xOffset = (i - centerIndex) * baseGap;
+  //   const old = ScrollTrigger.getById("fmvpHorizontal");
+  //   if (old) old.kill(true);
+  //   gsap.killTweensOf(inner);
 
-      let scale;
-      if (isCenter) {
-        scale = 1.35;
-      } else {
-        scale = 1.05 - dist * 0.07;
-        if (scale < 0.85) scale = 0.85;
-      }
+  //   gsap.to(inner, {
+  //     x: () => -(inner.scrollWidth - window.innerWidth),
+  //     ease: "none",
+  //     scrollTrigger: {
+  //       id: "fmvpHorizontal",
+  //       trigger: outer,
+  //       start: "top top",
+  //       end: () => "+=" + (inner.scrollWidth - window.innerWidth),
+  //       scrub: true,
+  //       pin: true,
+  //       anticipatePin: 1,
+  //       invalidateOnRefresh: true
+  //     }
+  //   });
+  // }
 
-
-      const yOffset = dist * 10;
-      tl.fromTo(
-        card,
-        {
-          xPercent: 0,
-          yPercent: 0,
-          opacity: 0,
-          scale: 0.9
-        },
-        {
-          xPercent: xOffset,
-          yPercent: yOffset,
-          opacity: 1,
-          scale: scale,
-          ease: 'none'
-        },
-        0
-      );
-    });
-
-    // ===== 🔥 GSAP 橫向滑動區設定 =====
-    const track = document.querySelector('.gsap-track');
-    const panels = gsap.utils.toArray('.gsap-panel');
-
-    if (track && panels.length > 0) {
-      const totalWidth = track.scrollWidth - window.innerWidth;
-
-      gsap.to(track, {
-        x: () => -totalWidth,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".gsap-gallery",
-          start: "top top",
-          end: () => "+=" + totalWidth,
-          scrub: true,
-          pin: true,
-          anticipatePin: 1
-        }
-      });
-    }
-
-    // ===== 🔥 FMVP 徽章進場動畫 =====
-    gsap.from(".fmvp-badge", {
-      x: -80,
-      opacity: 0,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".gsap-gallery",
-        start: "top center",
-        toggleActions: "play none none reverse"
-
-      }
-    });
-
-gsap.utils.toArray(".champion-pin").forEach((section) => {
-  const image = section.querySelector(".champion-image img");
-
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      start: "top top",
-      end: "+=100%",
-      pin: true,
-      scrub: true
-    }
+  // ✅ resize 一定要放在「Vue 外面」
+  window.addEventListener("resize", () => {
+    initFmvpHorizontal();
+    ScrollTrigger.refresh();
   });
 
-  tl.fromTo(
-    image,
-    { scale: 1 },
-    { scale: 1.2, ease: "none" }
-  );
-});
+            createApp({
+                data() {
+                    return {
+                        tag: "LEAGUE OF LEGENDS",
+                        title: "When Legends Take the Stage",
+                        subtitle: "World Champions · Legends · Moments",
+                        players: [
+                            { src: "images/uzi png.png", alt: "Uzi" },
+                            { src: "images/oner png.png", alt: "Oner" },
+                            { src: "images/chovy png.png", alt: "Chovy" },
+                            { src: "images/9132.png", alt: "Faker" },
+                            { src: "images/guma png.png", alt: "Gumayusi" },
+                            { src: "images/BDD png.png", alt: "BDD" },
+                            { src: "images/keria png.png", alt: "Keria" }
+                        ]
+                    };
+                },
+                mounted() {
+                    this.$nextTick(() => {
+                        // ✅ Hero 文字進場
+                        gsap.from('.hero-tag', { y: -10, opacity: 0, duration: 0.4 });
+                        gsap.from('.hero-title', { y: 20, opacity: 0, duration: 0.6, delay: 0.15 });
 
-gsap.from(".wc-badge", {
-  x: -80,
-  opacity: 0,
-  duration: 1,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: ".worldchamp-section",
-    start: "top center",
-    toggleActions: "play none none reverse"
-  }
-});
+                        // ✅ 有 subtitle 才做（避免 not found）
+                        if (document.querySelector('.hero-subtitle')) {
+                            gsap.from('.hero-subtitle', { y: 20, opacity: 0, duration: 0.6, delay: 0.3 });
+                        }
+
+                        // ✅ 玩家卡片（v-for）
+                        const cards = gsap.utils.toArray('.player-img');
+                        const total = cards.length;
+                        const centerIndex = (total - 1) / 2;
+
+                        gsap.set(cards, (i, card) => {
+                            const dist = Math.abs(i - centerIndex);
+                            gsap.set(card, { zIndex: total - dist });
+                        });
+
+                        const tl = gsap.timeline({
+                            scrollTrigger: {
+                                trigger: '.player-hero',
+                                start: 'top top',
+                                end: '+=900',
+                                scrub: true,
+                                pin: true
+                            }
+                        });
+
+                        cards.forEach((card, i) => {
+                            const dist = Math.abs(i - centerIndex);
+                            const isCenter = i === Math.round(centerIndex);
+                            const baseGap = 85;
+                            const xOffset = (i - centerIndex) * baseGap;
+
+                            let scale = isCenter ? 1.35 : Math.max(0.85, 1.05 - dist * 0.07);
+                            const yOffset = dist * 10;
+
+                            tl.fromTo(card,
+                                { xPercent: 0, yPercent: 0, opacity: 0, scale: 0.9 },
+                                { xPercent: xOffset, yPercent: yOffset, opacity: 1, scale, ease: 'none' },
+                                0
+                            );
+                        });
+
+                        // ✅ 很重要：有 pin/scroll 動畫時，mount 後 refresh
+                        ScrollTrigger.refresh();
+                    });
+                }
+            }).mount("#heroApp");
+
+            createApp({
+                data() {
+                    return {
+                        panels: [
+                            {
+                                year: 2022,
+                                player: "Kingen",
+                                team: "DRX",
+                                lane: "Top",
+                                traits: "Teamfight Initiation and Split Pushing",
+                                desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+                                panelClass: "panel-2022",
+                                photoClass: "fmvp-2022",
+                                heroes: [
+                                    { name: "Aatrox", img: "images/Aatrox_0.jpg" },
+                                    { name: "Camille", img: "images/Camille_0.jpg" },
+                                    { name: "Sejuani", img: "images/Sejuani_0.jpg" }
+                                ]
+                            },
+                            {
+                                year: 2023,
+                                player: "Zeus",
+                                team: "T1",
+                                lane: "Top",
+                                traits: "Teamfight Initiation and Split Pushing",
+                                desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima veritatis fugit numquam harum eius.",
+                                panelClass: "panel-2023",
+                                photoClass: "fmvp-2023",
+                                heroes: [
+                                    { name: "Aatrox", img: "images/Aatrox_0.jpg" },
+                                    { name: "Camille", img: "images/Camille_0.jpg" },
+                                    { name: "Sejuani", img: "images/Sejuani_0.jpg" }
+                                ]
+                            },
+                            {
+                                year: 2024,
+                                player: "Faker",
+                                team: "T1",
+                                lane: "Mid",
+                                traits: "High damage output and playmaking ability",
+                                desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque reiciendis tempora harum eveniet quisquam.",
+                                panelClass: "panel-2024",
+                                photoClass: "fmvp-2024",
+                                heroes: [
+                                    { name: "Aatrox", img: "images/Aatrox_0.jpg" },
+                                    { name: "Camille", img: "images/Camille_0.jpg" },
+                                    { name: "Sejuani", img: "images/Sejuani_0.jpg" }
+                                ]
+                            },
+                            {
+                                year: 2025,
+                                player: "Gumayusi",
+                                team: "T1",
+                                lane: "AD Carry",
+                                traits: "Exceptional positioning and consistent damage output",
+                                desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, iure. Est, praesentium.",
+                                panelClass: "panel-2025",
+                                photoClass: "fmvp-2025",
+                                heroes: [
+                                    { name: "Aatrox", img: "images/Aatrox_0.jpg" },
+                                    { name: "Camille", img: "images/Camille_0.jpg" },
+                                    { name: "Sejuani", img: "images/Sejuani_0.jpg" }
+                                ]
+                            }
+                        ]
+                    };
+                },
+                async mounted() {
+                    // 先嘗試從 server 拿資料，若失敗則保留預設 panels
+                    try {
+                        const res = await fetch("/fmvp");
+                        if (res.ok) {
+                            this.panels = await res.json();
+                        } else {
+                            console.warn('FMVP fetch returned', res.status);
+                        }
+                    } catch (e) {
+                        console.log("FMVP fetch error:", e);
+                    } finally {
+                        // 無論成功或失敗，都在下一 tick refresh ScrollTrigger
+                        this.$nextTick(() => {
+                            if (window.ScrollTrigger) ScrollTrigger.refresh();
+                        });
+                    }
+                }
+            }).mount("#fmvpApp");
+
+        </script>
+
+        <script>
+
+            // ===== 🔥 GSAP 橫向滑動區設定 =====
+            const track = document.querySelector('.gsap-track');
+            const panels = gsap.utils.toArray('.gsap-panel');
+
+            if (track && panels.length > 0) {
+                const totalWidth = track.scrollWidth - window.innerWidth;
+
+                gsap.to(track, {
+                    x: () => -totalWidth,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: ".gsap-gallery",
+                        start: "top top",
+                        end: () => "+=" + totalWidth,
+                        scrub: true,
+                        pin: true,
+                        anticipatePin: 1
+                    }
+                });
+            }
+
+            // ===== 🔥 FMVP 徽章進場動畫 =====
+            gsap.from(".fmvp-badge", {
+                x: -80,
+                opacity: 0,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".gsap-gallery",
+                    start: "top center",
+                    toggleActions: "play none none reverse"
+
+                }
+            });
+
+            gsap.utils.toArray(".champion-pin").forEach((section) => {
+                const image = section.querySelector(".champion-image img");
+
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top top",
+                        end: "+=100%",
+                        pin: true,
+                        scrub: true
+                    }
+                });
+
+                tl.fromTo(
+                    image,
+                    { scale: 1 },
+                    { scale: 1.2, ease: "none" }
+                );
+            });
+
+            gsap.from(".wc-badge", {
+                x: -80,
+                opacity: 0,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".worldchamp-section",
+                    start: "top center",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
 
 
 
 
 
-    // ===== 🔊 背景音樂播放清單 =====
-    const bgm = document.getElementById('bgm');
-    const musicToggle = document.getElementById('musicToggle');
-    const musicTitle = document.getElementById('musicTitle');
-    const musicSelect = document.getElementById('musicSelect');
+            // ===== 🔊 背景音樂播放清單 =====
+            const bgm = document.getElementById('bgm');
+            const musicToggle = document.getElementById('musicToggle');
+            const musicTitle = document.getElementById('musicTitle');
+            const musicSelect = document.getElementById('musicSelect');
 
-    // 這裡設定你的曲目清單（檔名記得跟 /audio 裡的一樣）
-    const tracks = [
-      { title: 'Legends Never Die (ft. Against The Current)', file: 'Audio/m1.weba' },
-      { title: 'K/DA - POP/STARS', file: 'Audio/KDA.weba' },
-      { title: 'RISE', file: 'Audio/RISE.mp3' },
-      { title: 'ignite', file: 'Audio/Ignite (ft. Zedd).mp3' },
-      { title: 'Phoenix', file: 'Audio/Phoenix.mp3' },
-      { title: 'Heavy is the Crown', file: 'Audio/Heavy Is The Crown ft. Linkin Park.mp3' },
-    ];
+            // 這裡設定你的曲目清單（檔名記得跟 /audio 裡的一樣）
+            const tracks = [
+                { title: 'Legends Never Die (ft. Against The Current)', file: 'Audio/m1.weba' },
+                { title: 'K/DA - POP/STARS', file: 'Audio/KDA.weba' },
+                { title: 'RISE', file: 'Audio/RISE.mp3' },
+                { title: 'ignite', file: 'Audio/Ignite (ft. Zedd).mp3' },
+                { title: 'Phoenix', file: 'Audio/Phoenix.mp3' },
+                { title: 'Heavy is the Crown', file: 'Audio/Heavy Is The Crown ft. Linkin Park.mp3' },
+            ];
 
-    let currentIndex = 0;
-    let isPlaying = false;
+            let currentIndex = 0;
+            let isPlaying = false;
 
-    function updateButton() {
-      if (isPlaying) {
-        musicToggle.classList.add('on');
-        musicToggle.textContent = '🔊 BGM';
-      } else {
-        musicToggle.classList.remove('on');
-        musicToggle.textContent = '🔈 BGM';
-      }
-    }
+            function updateButton() {
+                if (isPlaying) {
+                    musicToggle.classList.add('on');
+                    musicToggle.textContent = '🔊 BGM';
+                } else {
+                    musicToggle.classList.remove('on');
+                    musicToggle.textContent = '🔈 BGM';
+                }
+            }
 
-    function loadTrack(index, autoplay = false) {
-      // 保護：避免 NaN / 超出範圍
-      if (!Number.isFinite(index)) index = 0;
-      if (index < 0) index = 0;
-      if (index >= tracks.length) index = 0;
+            function loadTrack(index, autoplay = false) {
+                // 保護：避免 NaN / 超出範圍
+                if (!Number.isFinite(index)) index = 0;
+                if (index < 0) index = 0;
+                if (index >= tracks.length) index = 0;
 
-      currentIndex = index;
-      const track = tracks[index];
-      if (!track) return;
+                currentIndex = index;
+                const track = tracks[index];
+                if (!track) return;
 
-      // ✅ 避免檔名有空白/括號造成 404
-      bgm.src = encodeURI(track.file);
-      bgm.load(); // ✅ 切歌更穩
+                // ✅ 避免檔名有空白/括號造成 404
+                bgm.src = encodeURI(track.file);
+                bgm.load(); // ✅ 切歌更穩
 
-      musicTitle.textContent = track.title;
-      musicSelect.value = String(index);
+                musicTitle.textContent = track.title;
+                musicSelect.value = String(index);
 
-      if (autoplay) {
-        bgm.play().then(() => {
-          isPlaying = true;
-          updateButton();
-        }).catch(() => {
-          // autoplay 可能被瀏覽器擋（未互動）
-        });
-      }
-    }
+                if (autoplay) {
+                    bgm.play().then(() => {
+                        isPlaying = true;
+                        updateButton();
+                    }).catch(() => {
+                        // autoplay 可能被瀏覽器擋（未互動）
+                    });
+                }
+            }
 
-    function playCurrent() {
-      if (!bgm.getAttribute('src')) {
-        loadTrack(currentIndex, false);
-      }
-      bgm.volume = 0.5; // 0 ~ 1 自己調
-      bgm.play().then(() => {
-        isPlaying = true;
-        updateButton();
-      }).catch(() => { });
-    }
+            function playCurrent() {
+                if (!bgm.getAttribute('src')) {
+                    loadTrack(currentIndex, false);
+                }
+                bgm.volume = 0.5; // 0 ~ 1 自己調
+                bgm.play().then(() => {
+                    isPlaying = true;
+                    updateButton();
+                }).catch(() => { });
+            }
 
-    // ✅ 播完自動下一首（循環歌單）
-    function playNextTrack() {
-      const nextIndex = (currentIndex + 1) % tracks.length;
-      loadTrack(nextIndex, true);
-    }
+            // ✅ 播完自動下一首（循環歌單）
+            function playNextTrack() {
+                const nextIndex = (currentIndex + 1) % tracks.length;
+                loadTrack(nextIndex, true);
+            }
 
-    // ✅ 播放結束事件：自動下一首
-    bgm.addEventListener('ended', () => {
-      // 只有在「正在播放」的狀態下才自動跳下一首
-      // （避免你手動暫停後，剛好 ended/換src 觸發時亂跳）
-      if (isPlaying) playNextTrack();
-    });
+            // ✅ 播放結束事件：自動下一首
+            bgm.addEventListener('ended', () => {
+                // 只有在「正在播放」的狀態下才自動跳下一首
+                // （避免你手動暫停後，剛好 ended/換src 觸發時亂跳）
+                if (isPlaying) playNextTrack();
+            });
 
-    // 播放/暫停按鈕
-    musicToggle.addEventListener('click', () => {
-      if (isPlaying) {
-        bgm.pause();
-        isPlaying = false;
-        updateButton();
-      } else {
-        playCurrent();
-      }
-    });
+            // 播放/暫停按鈕
+            musicToggle.addEventListener('click', () => {
+                if (isPlaying) {
+                    bgm.pause();
+                    isPlaying = false;
+                    updateButton();
+                } else {
+                    playCurrent();
+                }
+            });
 
-    // 下拉選單換歌
-    musicSelect.addEventListener('change', (e) => {
-      const index = parseInt(e.target.value, 10);
-      loadTrack(index, isPlaying); // 目前在播就繼續播
-    });
+            // 下拉選單換歌
+            musicSelect.addEventListener('change', (e) => {
+                const index = parseInt(e.target.value, 10);
+                loadTrack(index, isPlaying); // 目前在播就繼續播
+            });
 
-    // 初始化：載入第一首，但先不播
-    loadTrack(0, false);
+            // 初始化：載入第一首，但先不播
+            loadTrack(0, false);
 
-    // 第一次點擊或捲動頁面時，自動開始播放目前曲目
-    const autoStart = () => {
-      if (!isPlaying) playCurrent();
-    };
+            // 第一次點擊或捲動頁面時，自動開始播放目前曲目
+            const autoStart = () => {
+                if (!isPlaying) playCurrent();
+            };
 
-    window.addEventListener('click', autoStart, { once: true });
-    window.addEventListener('scroll', autoStart, { once: true });
-  </script>
+            window.addEventListener('click', autoStart, { once: true });
+            window.addEventListener('scroll', autoStart, { once: true });
+        </script>
 
-  </body>
- 
- 
- 
- 
- <!-- vue -->
-  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-  <script>
-    const { createApp } = Vue;
-
-createApp({
-  data() {
-    return {
-      tag: "LEAGUE OF LEGENDS",
-      title: "When Legends Take the Stage",
-      players: [
-        { src: "images/uzi png.png", alt: "Uzi" },
-        { src: "images/oner png.png", alt: "Oner" },
-        { src: "images/chovy png.png", alt: "Chovy" },
-        { src: "images/9132.png", alt: "Faker" },
-        { src: "images/guma png.png", alt: "Gumayusi" },
-        { src: "images/BDD png.png", alt: "BDD" },
-        { src: "images/keria png.png", alt: "Keria" }
-      ]
-    };
-  }
-}).mount("#heroApp");
-  </script>
-
-
+</body>
 
 </html>
