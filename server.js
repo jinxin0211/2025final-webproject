@@ -17,7 +17,7 @@ var DB=require("nedb-promises");
 var herobannerDB=DB.create(__dirname+"/Database/herobanner.db");
 var fmvpDB = DB.create(__dirname + "/Database/fmvp.db");
 server.get("/hero",async function(req,res){
-    var herobanners=await herobannerDB.find({},{"_id":0});then(results=>{
+    var herobanners=await herobannerDB.find({},{"_id":0}).then(results=>{
        
         res.send(results);
     }).catch(error=>{
