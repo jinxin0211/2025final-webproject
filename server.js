@@ -35,83 +35,83 @@ server.get("/fmvp", async function (req, res) {
   }
 });
 
-herobannerDB.insert({
-  tag: "LEAGUE OF LEGENDS",
-  title: "When Legends Take the Stage",
-  subtitle: "World Champions · Legends · Moments",
-  players: [
-    { src: "images/uzi png.png", alt: "Uzi" },
-    { src: "images/oner png.png", alt: "Oner" },
-    { src: "images/chovy png.png", alt: "Chovy" },
-    { src: "images/9132.png", alt: "Faker" },
-    { src: "images/guma png.png", alt: "Gumayusi" },
-    { src: "images/BDD png.png", alt: "BDD" },
-    { src: "images/keria png.png", alt: "Keria" }
-  ]
-});
+// herobannerDB.insert({
+//   tag: "LEAGUE OF LEGENDS",
+//   title: "When Legends Take the Stage",
+//   subtitle: "World Champions · Legends · Moments",
+//   players: [
+//     { src: "images/uzi png.png", alt: "Uzi" },
+//     { src: "images/oner png.png", alt: "Oner" },
+//     { src: "images/chovy png.png", alt: "Chovy" },
+//     { src: "images/9132.png", alt: "Faker" },
+//     { src: "images/guma png.png", alt: "Gumayusi" },
+//     { src: "images/BDD png.png", alt: "BDD" },
+//     { src: "images/keria png.png", alt: "Keria" }
+//   ]
+// });
 
- fmvpDB.insert([
-        {
-          year: 2022,
-          player: "Kingen",
-          team: "DRX",
-          lane: "Top",
-          traits: "Teamfight Initiation and Split Pushing",
-          desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, accusantium aspernatur accusamus voluptate nobis fugiat neque!",
-          panelClass: "panel-2022",
-          photoClass: "fmvp-2022",
-          heroes: [
-            { name: "Aatrox", img: "images/Aatrox_0.jpg" },
-            { name: "Camille", img: "images/Camille_0.jpg" },
-            { name: "Sejuani", img: "images/Sejuani_0.jpg" }
-          ]
-        },
-        {
-          year: 2023,
-          player: "Zeus",
-          team: "T1",
-          lane: "Top",
-          traits: "Teamfight Initiation and Split Pushing",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima veritatis fugit numquam harum eius.",
-          panelClass: "panel-2023",
-          photoClass: "fmvp-2023",
-          heroes: [
-            { name: "Aatrox", img: "images/Aatrox_0.jpg" },
-            { name: "Camille", img: "images/Camille_0.jpg" },
-            { name: "Sejuani", img: "images/Sejuani_0.jpg" }
-          ]
-        },
-        {
-          year: 2024,
-          player: "Faker",
-          team: "T1",
-          lane: "Mid",
-          traits: "High damage output and playmaking ability",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque reiciendis tempora harum eveniet quisquam.",
-          panelClass: "panel-2024",
-          photoClass: "fmvp-2024",
-          heroes: [
-            { name: "Aatrox", img: "images/Aatrox_0.jpg" },
-            { name: "Camille", img: "images/Camille_0.jpg" },
-            { name: "Sejuani", img: "images/Sejuani_0.jpg" }
-          ]
-        },
-        {
-          year: 2025,
-          player: "Gumayusi",
-          team: "T1",
-          lane: "AD Carry",
-          traits: "Exceptional positioning and consistent damage output",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, iure. Est, praesentium.",
-          panelClass: "panel-2025",
-          photoClass: "fmvp-2025",
-          heroes: [
-            { name: "Aatrox", img: "images/Aatrox_0.jpg" },
-            { name: "Camille", img: "images/Camille_0.jpg" },
-            { name: "Sejuani", img: "images/Sejuani_0.jpg" }
-          ]
-        }
-      ]);
+//  fmvpDB.insert([
+//         {
+//           year: 2022,
+//           player: "Kingen",
+//           team: "DRX",
+//           lane: "Top",
+//           traits: "Teamfight Initiation and Split Pushing",
+//           desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, accusantium aspernatur accusamus voluptate nobis fugiat neque!",
+//           panelClass: "panel-2022",
+//           photoClass: "fmvp-2022",
+//           heroes: [
+//             { name: "Aatrox", img: "images/Aatrox_0.jpg" },
+//             { name: "Camille", img: "images/Camille_0.jpg" },
+//             { name: "Sejuani", img: "images/Sejuani_0.jpg" }
+//           ]
+//         },
+//         {
+//           year: 2023,
+//           player: "Zeus",
+//           team: "T1",
+//           lane: "Top",
+//           traits: "Teamfight Initiation and Split Pushing",
+//           desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima veritatis fugit numquam harum eius.",
+//           panelClass: "panel-2023",
+//           photoClass: "fmvp-2023",
+//           heroes: [
+//             { name: "Aatrox", img: "images/Aatrox_0.jpg" },
+//             { name: "Camille", img: "images/Camille_0.jpg" },
+//             { name: "Sejuani", img: "images/Sejuani_0.jpg" }
+//           ]
+//         },
+//         {
+//           year: 2024,
+//           player: "Faker",
+//           team: "T1",
+//           lane: "Mid",
+//           traits: "High damage output and playmaking ability",
+//           desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque reiciendis tempora harum eveniet quisquam.",
+//           panelClass: "panel-2024",
+//           photoClass: "fmvp-2024",
+//           heroes: [
+//             { name: "Aatrox", img: "images/Aatrox_0.jpg" },
+//             { name: "Camille", img: "images/Camille_0.jpg" },
+//             { name: "Sejuani", img: "images/Sejuani_0.jpg" }
+//           ]
+//         },
+//         {
+//           year: 2025,
+//           player: "Gumayusi",
+//           team: "T1",
+//           lane: "AD Carry",
+//           traits: "Exceptional positioning and consistent damage output",
+//           desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, iure. Est, praesentium.",
+//           panelClass: "panel-2025",
+//           photoClass: "fmvp-2025",
+//           heroes: [
+//             { name: "Aatrox", img: "images/Aatrox_0.jpg" },
+//             { name: "Camille", img: "images/Camille_0.jpg" },
+//             { name: "Sejuani", img: "images/Sejuani_0.jpg" }
+//           ]
+//         }
+//       ]);
 
   (async function initDB() {
   try {

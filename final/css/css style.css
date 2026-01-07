@@ -854,3 +854,63 @@ body {
   flex: 0 0 100vw;
   min-width: 100vw;
 }
+
+/* ===== Team Section ===== */
+.team-wrapper {
+  background: #020617;
+  scroll-margin-top: 90px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  background: linear-gradient(to right, #fff, #cbd5e1);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.section-subtitle {
+  color: #9ca3af;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.region-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #f9fafb;
+  border-left: 4px solid #6366f1;
+  padding-left: 12px;
+}
+
+.team-card {
+  background: #020617;
+}
+
+.team-image {
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.team-name {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #f9fafb;
+}
+
+.team-desc {
+  color: #d1d5db;
+  line-height: 1.8;
+}
+
+.team-achievements {
+  margin-top: 12px;
+  padding-left: 0;
+  list-style: none;
+  color: #e5e7eb;
+}
+
+.team-achievements li {
+  margin-bottom: 6px;
+}
