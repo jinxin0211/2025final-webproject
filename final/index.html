@@ -537,6 +537,43 @@
                 </div>
             </section>
 
+            <!-- 留言區 -->
+            <section id="comments" class="py-5" style="background-color: #111; color: #fff;">
+                <div class="container" id="commentApp">
+                    <h2 class="h3 fw-bold mb-4 border-start border-3 border-danger ps-3">粉絲留言板</h2>
+                    
+                    <!-- 留言列表 -->
+                    <div class="row mb-5">
+                        <div class="col-12">
+                            <div v-if="comments.length === 0" class="text-secondary">目前尚無留言，搶頭香！</div>
+                            <div v-for="(c, idx) in comments" :key="idx" class="card mb-3 bg-dark text-light border-secondary">
+                                <div class="card-body">
+                                    <h5 class="card-title text-danger">{{ c.nickname }}</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted" style="font-size: 0.8rem;">{{ formatDate(c.timestamp) }}</h6>
+                                    <p class="card-text">{{ c.message }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 新增留言表單 -->
+                    <div class="card bg-dark text-light border-secondary">
+                        <div class="card-header border-secondary">新增留言</div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="nickname" class="form-label">暱稱</label>
+                                <input type="text" class="form-control bg-secondary text-light border-0" id="nickname" v-model="newComment.nickname">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">留言內容</label>
+                                <textarea class="form-control bg-secondary text-light border-0" id="message" rows="3" v-model="newComment.message"></textarea>
+                            </div>
+                            <button type="button" class="btn btn-danger" @click="submitComment">送出留言</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
             <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
@@ -748,6 +785,59 @@
                         }
                     }
                 }).mount("#fmvpApp");
+
+                createApp({
+                    data() {
+                        return {
+                            comments: [],
+                            newComment: {
+                                nickname: "",
+                                message: ""
+                            }
+                        };
+                    },
+                    methods: {
+                        async fetchComments() {
+                            try {
+                                const res = await fetch("/comments");
+                                if (res.ok) {
+                                    this.comments = await res.json();
+                                }
+                            } catch (e) {
+                                console.error("Check comments error:", e);
+                            }
+                        },
+                        async submitComment() {
+                            if(!this.newComment.nickname || !this.newComment.message) {
+                                alert("請輸入暱稱與內容");
+                                return;
+                            }
+                            try {
+                                const res = await fetch("/comments", {
+                                    method: "POST",
+                                    headers: { "Content-Type": "application/json" },
+                                    body: JSON.stringify(this.newComment)
+                                });
+                                if (res.ok) {
+                                    this.newComment.nickname = "";
+                                    this.newComment.message = "";
+                                    this.fetchComments();
+                                } else {
+                                    alert("留言失敗");
+                                }
+                            } catch (e) {
+                                console.error("Submit comment error:", e);
+                            }
+                        },
+                        formatDate(val) {
+                            if(!val) return "";
+                            return new Date(val).toLocaleString();
+                        }
+                    },
+                    mounted() {
+                        this.fetchComments();
+                    }
+                }).mount("#commentApp");
 
             </script>
 

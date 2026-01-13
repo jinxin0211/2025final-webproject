@@ -696,7 +696,7 @@ body {
     radial-gradient(circle at 20% 10%, rgba(59,130,246,0.14), transparent 55%),
     radial-gradient(circle at 80% 40%, rgba(14,165,233,0.10), transparent 55%),
     linear-gradient(to bottom, #020617, #000000 70%);
-  overflow: hidden;
+  /* overflow: hidden;  <-- GSAP Pinning often conflicts with overflow hidden on parent */
 }
 
 .worldchamp-section::before{
@@ -747,7 +747,9 @@ body {
 
 /* 卡片：更暗、更接近你 FMVP 的 panel 质感 */
 .champion-card{
-  width: min(1000px, 92vw);
+  /* 自適應寬度：大螢幕維持 52vw (相當於 1920解析度下的 1000px)，小螢幕則放寬 */
+  width: clamp(340px, 92vw, 52.1vw);
+
   text-align: center;
   padding: 34px 36px 26px;
   border-radius: 26px;
@@ -813,7 +815,9 @@ body {
 
 .champion-image img{
   width: 100%;
-  height: min(420px, 52vh);
+  height: auto;
+  /* 移除強制的最大高度與 16:9 限制，改回更自然的橫向比例，避免高解析度下圖片被拉伸變形 */
+  aspect-ratio: 21 / 9; 
   object-fit: cover;
   display:block;
   transform-origin: center;

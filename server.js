@@ -14,8 +14,33 @@ server.use(bodyParser.json());
 server.use(fileUpload({limits:{fileSize:2*1024*1024}}))
 
 var DB=require("nedb-promises");
-var herobannerDB=DB.create(__dirname+"/Database/herobanner.db");
-var fmvpDB = DB.create(__dirname + "/Database/fmvp.db");
+var herobannerDB=DB.create(__dirname+"/herobanner.db");
+var fmvpDB = DB.create(__dirname + "/fmvp.db");
+var commentsDB = DB.create(__dirname + "/comments.db");
+
+server.get("/comments", async function (req, res) {
+    try {
+        var results = await commentsDB.find({}).sort({ timestamp: -1 });
+        res.json(results);
+    } catch (error) {
+        res.status(500).json({ error: error.message || String(error) });
+    }
+});
+
+server.post("/comments", async function (req, res) {
+    try {
+        var newComment = {
+            nickname: req.body.nickname,
+            message: req.body.message,
+            timestamp: new Date()
+        };
+        await commentsDB.insert(newComment);
+        res.json({ status: "success" });
+    } catch (error) {
+        res.status(500).json({ error: error.message || String(error) });
+    }
+});
+
 server.get("/hero",async function(req,res){
     var herobanners=await herobannerDB.find({},{"_id":0}).then(results=>{
        
